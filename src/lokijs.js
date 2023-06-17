@@ -4160,7 +4160,10 @@
       this.events = {
         'rebuild': [],
         'filter': [],
-        'sort': []
+        'sort': [],
+        'insert':[],
+        'update':[],
+        'delete':[]
       };
     }
 
