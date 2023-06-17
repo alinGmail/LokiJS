@@ -4812,7 +4812,8 @@
         } else {
           this.queueRebuildEvent();
         }
-
+        // emit insert event
+        this.emit('insert',this.collection.data[objIndex]);
         return;
       }
 
@@ -4838,7 +4839,8 @@
         } else {
           this.queueRebuildEvent();
         }
-
+        // emit delete event
+        this.emit('delete',this.collection.data[objIndex]);
         return;
       }
 
@@ -4855,7 +4857,8 @@
         } else {
           this.queueRebuildEvent();
         }
-
+        // emit update event
+        this.emit('update',this.collection.data[objIndex]);
         return;
       }
     };
