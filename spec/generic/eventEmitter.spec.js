@@ -1,5 +1,7 @@
 if (typeof(window) === 'undefined') var loki = require('../../src/lokijs.js');
 
+var users;
+
 describe('eventEmitter', function () {
   var db;
 

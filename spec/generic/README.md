@@ -1,1 +1,1 @@
-This folder contains Jasmine test specifications which can be tested both in a browser and using nodejs
+This folder contains specifications which run in the Vitest `unit` (Node) project.

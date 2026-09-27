@@ -1469,10 +1469,6 @@
           return reconstruct;
         }
       }
-
-      reconstruct.push("");
-
-      return reconstruct.join(delim);
     };
 
     /**
@@ -1780,14 +1776,12 @@
           }
           copyColl.getData = coll.getData;
           Object.defineProperty(copyColl, 'data', {
-            /* jshint loopfunc:true */
             get: function() {
               var data = this.getData();
               this.getData = null;
               Object.defineProperty(this, 'data', { value: data });
               return data;
             }
-            /* jshint loopfunc:false */
           });
         } else {
           // load each element individually

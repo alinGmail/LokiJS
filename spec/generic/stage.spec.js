@@ -1,5 +1,7 @@
 if (typeof (window) === 'undefined') var loki = require('../../src/lokijs.js');
 
+var db, directors, films;
+
 describe('Staging and commits', function () {
   beforeEach(function () {
     db = new loki('testJoins', {

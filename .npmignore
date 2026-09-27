@@ -4,5 +4,12 @@ demos/
 examples/
 jsdoc/
 tutorials/
+original/
+presentations/
 spec/
 coverage/
+test.db
+.github/
+eslint.config.mjs
+vitest.config.mjs
+types/README.md

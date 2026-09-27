@@ -1,5 +1,7 @@
 if (typeof (window) === 'undefined') var loki = require('../../src/lokijs.js');
 
+var users;
+
 describe('testing unique index serialization', function () {
   var db;
   beforeEach(function () {
@@ -689,7 +691,6 @@ describe('async adapter tests', function() {
           // ok now lets load from it
           var db2 = new loki('sandbox.db', { adapter: adapter, throttledSaves: throttled});
           db2.loadDatabase({}, function(err) {
-            done();
             expect(db2.collections.length).toEqual(2);
             expect(db2.collections[0].data.length).toEqual(4);
             expect(db2.collections[1].data.length).toEqual(1);

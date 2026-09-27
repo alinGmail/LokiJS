@@ -1,5 +1,7 @@
 if (typeof (window) === 'undefined') var loki = require('../../src/lokijs.js');
 
+var a, b, idx, testRecords;
+
 describe('binary indices', function () {
   beforeEach(function () {
     testRecords = [
