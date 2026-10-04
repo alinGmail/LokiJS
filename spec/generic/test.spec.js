@@ -3,6 +3,8 @@ if (typeof (window) === 'undefined') {
   var suite = require('../helpers/assert-helpers.js').suite;
 }
 
+var testObject;
+
 describe('loki', function () {
   var db,
     users,

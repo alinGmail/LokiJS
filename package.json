@@ -4,6 +4,22 @@
   "description": "Fast document oriented javascript in-memory database",
   "homepage": "https://techfort.github.io/LokiJS/",
   "main": "src/lokijs.js",
+  "module": "src/lokijs.mjs",
+  "types": "types/lokijs.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/lokijs.d.ts",
+      "import": "./src/lokijs.mjs",
+      "require": "./src/lokijs.js",
+      "default": "./src/lokijs.js"
+    },
+    "./src/*.js": "./src/*.js",
+    "./src/*.mjs": "./src/*.mjs",
+    "./src/*": "./src/*.js",
+    "./build/*.js": "./build/*.js",
+    "./build/*": "./build/*.js",
+    "./package.json": "./package.json"
+  },
   "directories": {
     "example": "examples"
   },
@@ -22,18 +38,18 @@
     "indexeddb"
   ],
   "scripts": {
-    "lint": "jshint src",
-    "test:browser": "karma start karma.conf.js --single-run",
-    "test:node": "istanbul cover --dir coverage/nodejs node_modules/jasmine/bin/jasmine.js",
+    "lint": "eslint src spec",
     "pretest": "npm run lint",
-    "test": "npm run test:browser && npm run test:node",
-    "build:lokijs": "uglifyjs src/lokijs.js > build/lokijs.min.js",
-    "build:indexedAdapter": "uglifyjs src/loki-indexed-adapter.js > build/loki-indexed-adapter.min.js",
+    "test": "vitest run",
+    "test:unit": "vitest run --project unit",
+    "test:browser": "vitest run --project browser",
+    "test:coverage": "vitest run --project unit --coverage",
+    "build:lokijs": "terser src/lokijs.js --compress --mangle -o build/lokijs.min.js",
+    "build:indexedAdapter": "terser src/loki-indexed-adapter.js --compress --mangle -o build/loki-indexed-adapter.min.js",
     "build": "npm run build:lokijs && npm run build:indexedAdapter",
-    "prepublish": "npm run build",
-    "clean": "rimraf build/* coverage/* node_modules",
-    "pour:beer": "echo New npm version published, one beer for you !",
-    "jsdoc": "./node_modules/.bin/jsdoc -c jsdoc-conf.json",
+    "prepack": "npm run build",
+    "clean": "rimraf build coverage",
+    "jsdoc": "jsdoc -c docs-conf.json",
     "benchmark": "node benchmark/benchmark"
   },
   "author": "Joe Minichino <joe.minichino@gmail.com>",
@@ -47,19 +63,21 @@
   "bugs": {
     "url": "https://github.com/techfort/LokiJS/issues"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {},
   "devDependencies": {
-    "istanbul": "^0.4.4",
-    "jasmine": "^2.4.1",
-    "jsdoc": "^3.5.5",
-    "jshint": "^2.9.2",
-    "karma": "^1.1.2",
-    "karma-cli": "^1.0.1",
-    "karma-coverage": "^1.1.1",
-    "karma-jasmine": "^1.0.2",
-    "mocha": "^2.5.3",
-    "rimraf": "^2.5.4",
-    "should": "^4.6.5",
-    "uglify-js": "^2.7.0"
+    "@eslint/js": "^10.0.1",
+    "@vitest/browser": "^5.0.2",
+    "@vitest/browser-playwright": "^5.0.2",
+    "@vitest/coverage-v8": "^5.0.2",
+    "eslint": "^10.11.0",
+    "globals": "^17.12.0",
+    "jsdoc": "^4.0.5",
+    "playwright": "^1.63.0",
+    "rimraf": "^6.1.3",
+    "terser": "^5.51.2",
+    "vitest": "^5.0.2"
   }
 }

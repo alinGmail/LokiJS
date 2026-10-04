@@ -1,5 +1,7 @@
 if (typeof (window) === 'undefined') var loki = require('../../src/lokijs.js');
 
+var idx, testRecords;
+
 describe('dynamicviews', function () {
   beforeEach(function () {
     testRecords = [

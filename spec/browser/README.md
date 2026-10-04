@@ -1,1 +1,2 @@
-This folder contains Jasmine test specifications which can only be tested both in a browser
+This folder contains specifications which run in the Vitest `browser` project
+(headless Chromium through Playwright).

@@ -350,6 +350,7 @@
 
                     } 
                     // _getem('delete_doc', dbName, collName, "", "", doc)
+                    // eslint-disable-next-line no-dupe-else-if -- unreachable legacy branch, handled above
                     else if (operation === 'delete_current_doc') {
                         var coll5 = db.getCollection(currentDoc.collName);
                         if (!coll5) {
@@ -420,6 +421,7 @@
 
         function firstFewItemsOfDbList() {
             return $q(function (resolve, reject) {
+                // eslint-disable-next-line for-direction -- intentionally unbounded, exits via break below
                 for (var x = 0; x >= 0; x++) {
                     if ($injector.has('json' + (x + 1))) {
                         var item = {};
@@ -469,6 +471,7 @@
             if (numOfJsonDatabases >= 1) {
                 return numOfJsonDatabases;
             } else {
+                // eslint-disable-next-line for-direction -- intentionally unbounded, exits via break below
                 for (var x = 0; x >= 0; x++) {
                     if ($injector.has('json' + (x + 1))) {
                         numOfJsonDatabases++;

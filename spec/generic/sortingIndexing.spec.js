@@ -1,5 +1,7 @@
 if (typeof (window) === 'undefined') var loki = require('../../src/lokijs.js');
 
+var db, items;
+
 describe('sorting and indexing', function () {
   beforeEach(function () {
     db = new loki('sortingIndexingTest'),

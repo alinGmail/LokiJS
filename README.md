@@ -5,9 +5,8 @@ The super fast in-memory javascript document oriented database.
 Enable offline-syncing to your SQL/NoSQL database servers with [SyncProxy](https://www.syncproxy.com) !! Code-free real time syncing, ideal for mobile, electron and web apps.
 
 [![Join the chat at https://gitter.im/techfort/LokiJS](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/techfort/LokiJS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-![alt CI-badge](https://travis-ci.org/techfort/LokiJS.svg?branch=master)
-[![npm version](https://badge.fury.io/js/lokijs.svg)](http://badge.fury.io/js/lokijs)
-[![alt packagequality](http://npm.packagequality.com/shield/lokijs.svg)](http://packagequality.com/#?package=lokijs)
+![CI](https://github.com/alinGmail/LokiJS/actions/workflows/ci.yml/badge.svg)
+[![npm version](https://img.shields.io/npm/v/lokijs.svg)](https://www.npmjs.com/package/lokijs)
 
 ## Overview
 
@@ -46,7 +45,7 @@ Example usage can be found on the [wiki](https://github.com/techfort/LokiJS/wiki
 
 ## Current state
 
-LokiJS is at version 1.3 [Eostre].
+LokiJS is at version 1.5 [Eostre].
 
 As LokiJS is written in JavaScript it can be run on any environment supporting JavaScript such as browsers, node.js/node-webkit, nativescript mobile framework and hybrid mobile apps (such as phonegap/cordova).
 
@@ -56,11 +55,24 @@ _[Leave a tip](https://gratipay.com/techfort/) or give us a star if you find Lok
 
 ## Installation
 
-For browser environments you simply need the lokijs.js file contained in src/
+```sh
+npm install lokijs
+```
 
-You can use bower to install lokijs with `bower install lokijs`
+For node, bundlers, nativescript and browsers, install through npm. The package
+ships the source (`src/lokijs.js`), a minified build (`build/lokijs.min.js`),
+an ESM entry point (`src/lokijs.mjs`) and TypeScript definitions (`types/lokijs.d.ts`).
 
-For node and nativescript environments you can install through `npm install lokijs`.
+```js
+// CommonJS
+const loki = require('lokijs');
+
+// ESM / TypeScript
+import loki from 'lokijs';
+```
+
+For plain browser environments you can also include `src/lokijs.js` or
+`build/lokijs.min.js` with a `<script>` tag (they expose the global `loki`).
 
 ## Roadmap
 

@@ -1,4 +1,3 @@
-console.log("loading helpers");
 var suite = {
   assertEqual: function (message, actual, expected) {
     expect(actual).toEqual(expected);

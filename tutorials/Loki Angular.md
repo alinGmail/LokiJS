@@ -7,12 +7,12 @@
 This service of Lokijs for Angular simplifies things to the most basic level because i found Loki difficult to work with in a mobile environment.  all you do is setup json files that specify the layout of your data then add, and update entries to the databases.
 
 ###Install:
-`bower install lokijs`
+`npm install lokijs`
 
 ###Html:
 ```
-<script src="bower_components/lokijs/src/lokijs.js"></script>
-<script src="bower_components/lokijs/src/loki-angular.js"></script>
+<script src="node_modules/lokijs/src/lokijs.js"></script>
+<script src="node_modules/lokijs/src/loki-angular.js"></script>
 ```
 
 ###App:

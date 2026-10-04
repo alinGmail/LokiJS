@@ -13,7 +13,6 @@
   return (function() {
     "use strict";
 
-    /* jshint -W030 */
     var DEBUG = typeof window !== 'undefined' && !!window.__loki_incremental_idb_debug;
 
     /**

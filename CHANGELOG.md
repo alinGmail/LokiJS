@@ -1,5 +1,8 @@
 # Changelog
 
+* modernized the development toolchain: Vitest 5 (Node + Playwright browser projects), ESLint 10, terser, jsdoc 4, Playwright-based CI
+* added an ESM entry point (`src/lokijs.mjs`) and bundled TypeScript definitions (`types/lokijs.d.ts`)
+* added a `prepack` build (replacing the deprecated `prepublish`) and a GitHub Actions workflow
 * add IncrementalIndexedDBAdapter
 * make ensureIndex faster
 * LokiEventEmitter.emit faster
